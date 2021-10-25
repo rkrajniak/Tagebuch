@@ -1,5 +1,5 @@
-"#Tagebuch" 
+Tagebuch 
 Funktionen: 
--   Datum und Text speichern
--   Inhaltverzeichnis erstellen
--   Einträge bearbeiten
+- Datum und Text speichern
+- Inhaltsverzeichnis erstellen
+- Einträge bearbeiten
