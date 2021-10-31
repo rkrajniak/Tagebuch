@@ -1,4 +1,4 @@
-package de.htwberlin.webtech;
+package de.htwberlin.webtech.web;
 
 
 import de.htwberlin.webtech.web.api.Person;
