@@ -3,12 +3,12 @@ package de.htwberlin.webtech.web.api;
 public class PersonManipulationRequest {
 
     private String firstName;
-    private String lastname;
+    private String lastName;
     private boolean vaccinated;
 
-    public PersonManipulationRequest(String firstName, String lastname, boolean vaccinated) {
+    public PersonManipulationRequest(String firstName, String lastName, boolean vaccinated) {
         this.firstName = firstName;
-        this.lastname = lastname;
+        this.lastName = lastName;
         this.vaccinated = vaccinated;
     }
 
@@ -20,12 +20,12 @@ public class PersonManipulationRequest {
         this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public boolean isVaccinated() {

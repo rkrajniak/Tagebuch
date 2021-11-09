@@ -2,35 +2,32 @@ package de.htwberlin.webtech.persistence;
 
 import javax.persistence.*;
 
-@Entity(name="persons")
+@Entity(name = "persons")
 public class PersonEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="id")
-    private long id;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(name= "first_name", nullable = false)
+    @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @Column(name= "last_name", nullable = false)
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name= "is_vaccinated")
+    @Column(name = "is_vaccinated")
     private Boolean vaccinated;
 
-    public PersonEntity( String firstName, String lastName, Boolean vaccinated) {
+    public PersonEntity(String firstName, String lastName, Boolean vaccinated) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.vaccinated = vaccinated;
     }
 
+    protected PersonEntity() {}
 
-
-    protected PersonEntity() {
-
-    }
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

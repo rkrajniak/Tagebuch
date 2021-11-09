@@ -18,50 +18,54 @@ public class PersonService {
         this.personRepository = personRepository;
     }
 
-    public List<Person> findAll(){
+    public List<Person> findAll() {
         List<PersonEntity> persons = personRepository.findAll();
         return persons.stream()
                 .map(this::transformEntity)
                 .collect(Collectors.toList());
-
     }
 
-    public Person findById(Long id){
+    public Person findById(Long id) {
         var personEntity = personRepository.findById(id);
         return personEntity.map(this::transformEntity).orElse(null);
     }
-    //Fehler lastName not nullable
-    public Person create(PersonManipulationRequest request){
-        var personEntity = new PersonEntity(request.getFirstName(), request.getLastname(), request.isVaccinated());
+
+    public Person create(PersonManipulationRequest request) {
+        var personEntity = new PersonEntity(request.getFirstName(), request.getLastName(), request.isVaccinated());
         personEntity = personRepository.save(personEntity);
         return transformEntity(personEntity);
     }
-    public Person update(Long id, PersonManipulationRequest request){
+
+    public Person update(Long id, PersonManipulationRequest request) {
         var personEntityOptional = personRepository.findById(id);
-        if(personEntityOptional.isEmpty()){
+        if (personEntityOptional.isEmpty()) {
             return null;
         }
+
         var personEntity = personEntityOptional.get();
         personEntity.setFirstName(request.getFirstName());
-        personEntity.setLastName(request.getLastname());
+        personEntity.setLastName(request.getLastName());
         personEntity.setVaccinated(request.isVaccinated());
         personEntity = personRepository.save(personEntity);
+
         return transformEntity(personEntity);
     }
-    //Fehler lastName not nullable
-    public boolean deleteById(Long id){
-        if(!personRepository.existsById(id)){
+
+    public boolean deleteById(Long id) {
+        if (!personRepository.existsById(id)) {
             return false;
         }
+
         personRepository.deleteById(id);
         return true;
     }
-    private Person transformEntity(PersonEntity personEntity){
+
+    private Person transformEntity(PersonEntity personEntity) {
         return new Person(
                 personEntity.getId(),
                 personEntity.getFirstName(),
                 personEntity.getLastName(),
-                personEntity.getVaccinated());
+                personEntity.getVaccinated()
+        );
     }
-
 }
