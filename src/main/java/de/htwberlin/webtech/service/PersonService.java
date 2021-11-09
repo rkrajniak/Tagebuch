@@ -30,7 +30,7 @@ public class PersonService {
         var personEntity = personRepository.findById(id);
         return personEntity.map(this::transformEntity).orElse(null);
     }
-
+    //Fehler lastName not nullable
     public Person create(PersonManipulationRequest request){
         var personEntity = new PersonEntity(request.getFirstName(), request.getLastname(), request.isVaccinated());
         personEntity = personRepository.save(personEntity);
@@ -48,7 +48,7 @@ public class PersonService {
         personEntity = personRepository.save(personEntity);
         return transformEntity(personEntity);
     }
-
+    //Fehler lastName not nullable
     public boolean deleteById(Long id){
         if(!personRepository.existsById(id)){
             return false;
