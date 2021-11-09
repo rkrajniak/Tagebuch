@@ -1,12 +1,12 @@
 package de.htwberlin.webtech.web.api;
 
-public class PersonCreateRequest {
+public class PersonManipulationRequest {
 
     private String firstName;
     private String lastname;
     private boolean vaccinated;
 
-    public PersonCreateRequest(String firstName, String lastname, boolean vaccinated) {
+    public PersonManipulationRequest(String firstName, String lastname, boolean vaccinated) {
         this.firstName = firstName;
         this.lastname = lastname;
         this.vaccinated = vaccinated;
