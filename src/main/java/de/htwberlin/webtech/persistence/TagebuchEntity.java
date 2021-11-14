@@ -15,7 +15,7 @@ public class TagebuchEntity {
     @Column(name = "author",nullable = false)
     private String author;
 
-    @Column(name = "Datum", nullable = false)
+    @Column(name = "Datum",nullable = false)
     private Date datum;
 
     @Column(name = "erlebnis", nullable = false)

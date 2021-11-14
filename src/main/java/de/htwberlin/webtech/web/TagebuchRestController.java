@@ -33,7 +33,7 @@ public class TagebuchRestController {
         return ResponseEntity.created(uri).build();
     }
 
-    @PostMapping(path = "/api/v1/tagebuch/{id}")
+    @PutMapping(path = "/api/v1/tagebuch/{id}")
     public ResponseEntity<Tagebuch> updateTagebuch(@PathVariable Long id, @RequestBody TagebuchManipulationRequest request){
         var tagebuch = tagebuchService.update(id, request);
         return tagebuch != null? ResponseEntity.ok(tagebuch):ResponseEntity.notFound().build();
