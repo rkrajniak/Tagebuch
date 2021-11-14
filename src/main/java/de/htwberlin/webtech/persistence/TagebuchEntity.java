@@ -12,7 +12,7 @@ public class TagebuchEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "author")
+    @Column(name = "author",nullable = false)
     private String author;
 
     @Column(name = "Datum", nullable = false)
