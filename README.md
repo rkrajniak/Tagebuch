@@ -1,4 +1,4 @@
-[![CI](https://github.com/rkrajniak/Tagebuch/actions/workflows/ci.yml/badge.svg)](https://github.com/rkrajniak/Tagebuch/actions/workflows/ci.yml)
+[![CI](https://github.com/rkrajniak/Tagebuch/actions/workflows/ci.yml/badge.svg)](https://github.com/rkrajniak/Tagebuch/actions/workflows/gradle.yml)
 #Readme Tagebuch
 
 
