@@ -3,6 +3,7 @@ package de.htwberlin.webtech.persistence;
 
 
 import javax.persistence.*;
+import java.sql.Clob;
 import java.util.Date;
 
 @Entity(name= "Tagebuch")
@@ -17,8 +18,9 @@ public class TagebuchEntity {
 
     @Column(name = "Datum",nullable = false)
     private Date datum;
-
-    @Column(name = "erlebnis", nullable = false)
+    //lob datentyp benutzen
+    @Lob
+    @Column(name = "erlebnis", nullable = false, columnDefinition = "CLOB")
     private String erlebnis;
 
     @Column(name = "status")
@@ -57,6 +59,7 @@ public class TagebuchEntity {
     }
 
     public String getErlebnis() {
+
         return erlebnis;
     }
 

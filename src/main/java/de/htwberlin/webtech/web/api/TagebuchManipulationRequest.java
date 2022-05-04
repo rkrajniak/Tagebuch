@@ -1,5 +1,6 @@
 package de.htwberlin.webtech.web.api;
 
+import java.sql.Clob;
 import java.util.Date;
 
 public class TagebuchManipulationRequest {

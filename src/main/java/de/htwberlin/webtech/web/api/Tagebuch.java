@@ -1,6 +1,7 @@
 package de.htwberlin.webtech.web.api;
 
 
+import java.sql.Clob;
 import java.util.Date;
 
 public class Tagebuch {
@@ -14,15 +15,9 @@ public class Tagebuch {
     //soll angeben ob der tag gut oder schlecht war
     private boolean status;
 
-    public Tagebuch(Long id, String author,Date datum, String erlebnis, boolean status) {
-        this.id = id;
-        this.author = author;
-        this.datum = datum;
-        this.erlebnis = erlebnis;
-        this.status = status;
-    }
 
-    public Tagebuch() { }
+
+    public Tagebuch(Long id, String author, Date datum, String erlebnis, boolean status) { }
 
     public Long getId() {
         return id;
