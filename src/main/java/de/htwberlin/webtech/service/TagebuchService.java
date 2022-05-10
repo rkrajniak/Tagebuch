@@ -1,6 +1,7 @@
 package de.htwberlin.webtech.service;
 
 
+import de.htwberlin.webtech.persistence.Rating;
 import de.htwberlin.webtech.persistence.TagebuchEntity;
 import de.htwberlin.webtech.persistence.TagebuchRepository;
 
@@ -29,7 +30,7 @@ public class TagebuchService {
     }
 
     public Tagebuch create(TagebuchManipulationRequest request){
-        var tagebuchEntity = new TagebuchEntity(request.getAuthor(), request.getDatum(), request.getErlebnis(), request.isStatus());
+        var tagebuchEntity = new TagebuchEntity(request.getAuthor(), request.getDatum(), request.getErlebnis(), Rating.valueOf(request.getRating()));
         tagebuchEntity = tagebuchRepository.save(tagebuchEntity);
         return transformEntity(tagebuchEntity);
     }
@@ -43,7 +44,7 @@ public class TagebuchService {
         tagebuchEntity.setAuthor(request.getAuthor());
         tagebuchEntity.setDatum(request.getDatum());
         tagebuchEntity.setErlebnis(request.getErlebnis());
-        tagebuchEntity.setStatus(request.isStatus());
+        tagebuchEntity.setRating(Rating.valueOf(request.getRating()));
         tagebuchEntity = tagebuchRepository.save(tagebuchEntity);
         return transformEntity(tagebuchEntity);
     }
@@ -57,12 +58,15 @@ public class TagebuchService {
     }
 
     private Tagebuch transformEntity(TagebuchEntity tagebuchEntity) {
+        var rating = tagebuchEntity.getRating() != null ?
+                tagebuchEntity.getRating().name() : Rating.UNKNOWN.name();
+
         return new Tagebuch(
                 tagebuchEntity.getId(),
                 tagebuchEntity.getAuthor(),
                 tagebuchEntity.getDatum(),
                 tagebuchEntity.getErlebnis(),
-                tagebuchEntity.isStatus()
+                rating
         );
     }
 }

@@ -3,7 +3,6 @@ package de.htwberlin.webtech.persistence;
 
 
 import javax.persistence.*;
-import java.sql.Clob;
 import java.util.Date;
 
 @Entity(name= "Tagebuch")
@@ -19,23 +18,29 @@ public class TagebuchEntity {
     @Column(name = "Datum",nullable = false)
     private Date datum;
     //lob datentyp benutzen
-    @Lob
-    @Column(name = "erlebnis", nullable = false, columnDefinition = "CLOB")
+
+    @Column(name = "erlebnis", nullable = false)
     private String erlebnis;
 
-    @Column(name = "status")
-    private boolean status;
+    @Column(name = "Rating")
+    @Enumerated(value = EnumType.STRING)
+    private Rating rating;
 
-    public TagebuchEntity(String author, Date datum, String erlebnis, boolean status) {
+    public TagebuchEntity(String author, Date datum, String erlebnis, Rating rating) {
         this.author = author;
         this.datum = datum;
         this.erlebnis = erlebnis;
-        this.status = status;
+        this.rating = rating;
+    }
+
+    public TagebuchEntity() {
+
     }
 
 
+    //public TagebuchEntity(String author, Date datum, String erlebnis, Rating rating) { }
 
-    public TagebuchEntity() { }
+
 
     public String getAuthor() {
         return author;
@@ -67,11 +72,11 @@ public class TagebuchEntity {
         this.erlebnis = erlebnis;
     }
 
-    public boolean isStatus() {
-        return status;
+    public Rating getRating() {
+        return rating;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setRating(Rating rating) {
+        this.rating = rating;
     }
 }

@@ -1,6 +1,7 @@
 package de.htwberlin.webtech.web.api;
 
-import java.sql.Clob;
+import de.htwberlin.webtech.persistence.Rating;
+
 import java.util.Date;
 
 public class TagebuchManipulationRequest {
@@ -11,14 +12,14 @@ public class TagebuchManipulationRequest {
 
     private String erlebnis;
 
-    private boolean status;
+    private String rating;
 
-    public TagebuchManipulationRequest(Long id,String author,Date datum, String erlebnis, boolean status) {
+    public TagebuchManipulationRequest(Long id,String author,Date datum, String erlebnis, String rating) {
         this.id = id;
         this.author = author;
         this.datum = datum;
         this.erlebnis = erlebnis;
-        this.status = status;
+        this.rating = rating;
     }
 
 
@@ -50,11 +51,9 @@ public class TagebuchManipulationRequest {
         this.erlebnis = erlebnis;
     }
 
-    public boolean isStatus() {
-        return status;
-    }
+    public String getRating() {return rating;}
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 }
