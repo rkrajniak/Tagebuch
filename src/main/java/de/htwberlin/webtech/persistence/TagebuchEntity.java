@@ -17,6 +17,7 @@ public class TagebuchEntity {
 
     @Column(name = "Datum",nullable = false)
     private Date datum;
+
     //lob datentyp benutzen
 
     @Column(name = "erlebnis", nullable = false)
@@ -36,11 +37,6 @@ public class TagebuchEntity {
     public TagebuchEntity() {
 
     }
-
-
-    //public TagebuchEntity(String author, Date datum, String erlebnis, Rating rating) { }
-
-
 
     public String getAuthor() {
         return author;
@@ -63,10 +59,7 @@ public class TagebuchEntity {
         this.datum = datum;
     }
 
-    public String getErlebnis() {
-
-        return erlebnis;
-    }
+    public String getErlebnis() {return erlebnis;}
 
     public void setErlebnis(String erlebnis) {
         this.erlebnis = erlebnis;

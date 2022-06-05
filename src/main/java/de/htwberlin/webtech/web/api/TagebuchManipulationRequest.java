@@ -35,9 +35,7 @@ public class TagebuchManipulationRequest {
         this.author = author;
     }
 
-    public Date getDatum() {
-        return datum;
-    }
+    public Date getDatum() {return datum;}
 
     public void setDatum(Date datum) {
         this.datum = datum;
