@@ -21,6 +21,7 @@ public class TagebuchManipulationRequest {
         this.erlebnis = erlebnis;
         this.rating = rating;
     }
+    public TagebuchManipulationRequest(){}
 
 
     public Long getId() {
