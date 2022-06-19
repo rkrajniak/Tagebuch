@@ -1,7 +1,5 @@
 package de.htwberlin.webtech.web.api;
 
-import de.htwberlin.webtech.persistence.Rating;
-
 import java.util.Date;
 
 public class TagebuchManipulationRequest {
@@ -9,7 +7,6 @@ public class TagebuchManipulationRequest {
     private Long id;
     private String author;
     private Date datum;
-
     private String erlebnis;
 
     private String rating;
@@ -21,6 +18,7 @@ public class TagebuchManipulationRequest {
         this.erlebnis = erlebnis;
         this.rating = rating;
     }
+
     public TagebuchManipulationRequest(){}
 
 

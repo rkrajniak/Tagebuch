@@ -3,6 +3,7 @@ package de.htwberlin.webtech.persistence;
 
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity(name= "Tagebuch")
