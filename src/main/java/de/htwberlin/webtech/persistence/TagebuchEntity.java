@@ -16,7 +16,7 @@ public class TagebuchEntity {
     @Column(name = "author",nullable = false)
     private String author;
 
-    @Column(name = "Datum",nullable = false)
+    @Column(name = "datum",nullable = false)
     private Date datum;
 
     //lob datentyp benutzen
@@ -24,7 +24,7 @@ public class TagebuchEntity {
     @Column(name = "erlebnis", nullable = false)
     private String erlebnis;
 
-    @Column(name = "Rating")
+    @Column(name = "rating")
     @Enumerated(value = EnumType.STRING)
     private Rating rating;
 
